@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.summary       = s.description = "Extends ActiveRecord attributes with a `:choices` pseudo-type that provides convenient methods for mapping each choice to its human readable form."
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "1.3.5"
 
   s.add_dependency "activesupport"
   s.add_dependency "activerecord"
