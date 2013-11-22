@@ -84,11 +84,11 @@ module AttributeChoices
     private
     def assert_valid_attribute(attr_name)
 
-      if /1\.9/.match(RUBY_VERSION)
+      if /1\.8/.match(RUBY_VERSION)
+        getter = setter = attr_name.to_s
+      else
         getter = attr_name.to_sym
         setter ="#{attr_name}=".to_sym
-      else
-        getter = setter = attr_name.to_s
       end
 
       unless column_names.include?(attr_name.to_s) || (instance_methods.include?(getter) && instance_methods.include?(setter))
